@@ -27,3 +27,4 @@ Route::get('/berlin', function () {
 
 Route::get('/webhook', 'MessengerController@webhook');
 Route::post('/webhook', 'MessengerController@webhook_post');
+Route::get('/teste_luis', 'MessengerController@teste_luis');

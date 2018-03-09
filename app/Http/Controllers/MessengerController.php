@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use pimax\FbBotApp;
 use pimax\Messages\Message;
 use Twitter;
+use App\Http\Controllers\LuisController;
 
-class MessengerController extends Controller
+class MessengerController extends LuisController
 {
     public function webhook() {
     	$local_verify_token = env('WEBHOOK_VERIFY_TOKEN');
@@ -53,5 +54,9 @@ class MessengerController extends Controller
 
 		$message = new Message($recipient, $text);
 		$bot->send($message);
-    }
+	}
+
+	public function teste_luis() {
+		return $this->luisRequest('vou ver um fiat ou uma bmw.');
+	}
 }
